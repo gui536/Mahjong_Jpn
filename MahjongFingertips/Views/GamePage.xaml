@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MahjongFingertips.Views.GamePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="menuback.png">
+
+    <Grid Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <!-- Tabuleiro do jogador azul -->
+        <Label Text="Jogador Azul" FontSize="Medium" HorizontalOptions="Start" Margin="100,0,20,20" Grid.Column="0" />
+        <Grid x:Name="AzulGrid" RowSpacing="5" ColumnSpacing="5" Margin="10" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Colunas do jogador azul -->
+            <CollectionView ItemsSource="{Binding Coluna1Azul}" Grid.Row="0" Grid.Column="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="psushi.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna2Azul}" Grid.Row="0" Grid.Column="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna3Azul}" Grid.Row="0" Grid.Column="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna4Azul}" Grid.Row="0" Grid.Column="3">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <Label Text="Jogador Azul" FontSize="Medium" HorizontalOptions="Start" Margin="100,0,20,20" Grid.Column="2" />
+        <Grid x:Name="VermelhoGrid" RowSpacing="5" ColumnSpacing="5" Margin="10" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Colunas do jogador azul -->
+            <CollectionView ItemsSource="{Binding Coluna1Azul}" Grid.Row="0" Grid.Column="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="psushi.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna2Azul}" Grid.Row="0" Grid.Column="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna3Azul}" Grid.Row="0" Grid.Column="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Coluna4Azul}" Grid.Row="0" Grid.Column="3">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="tile_placeholder.png" HeightRequest="50" WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+
+        <!-- Botões de ação -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="20">
+            <Button x:Name="ExitButton"
+                    Text="Sair"
+                    Command="{Binding SairJogoCommand}"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Margin="10,0,0,0"
+                    VerticalOptions="End"
+                    Clicked="OnExitButtonClicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
+
