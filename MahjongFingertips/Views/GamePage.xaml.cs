@@ -8,20 +8,64 @@ namespace MahjongFingertips.Views;
 public partial class GamePage : ContentPage
 {
 
-    Peca peca;
+    Peca pecaSorteada;
+    int jogadorAtual;
+    class Coluna
+    {
+        Jogador jogador;
+        string tema;
+        List<Peca> pecas;
 
-	public GamePage()
+        public Jogador Jogador { get => jogador; set => jogador = value; }
+        public string Tema { get => tema; set => tema = value; }
+        public List<Peca> Pecas { get => pecas; set => pecas = value; }
+    }
+
+    Coluna coluna1Azul = new Coluna();
+    Coluna coluna2Azul = new Coluna();
+    Coluna coluna3Azul = new Coluna();
+    Coluna coluna4Azul = new Coluna();
+
+    Coluna coluna1Vermelha = new Coluna();
+    Coluna coluna2Vermelha = new Coluna();
+    Coluna coluna3Vermelha = new Coluna();
+    Coluna coluna4Vermelha = new Coluna();
+
+
+    public GamePage()
     {
         InitializeComponent();
         CreateMahjongTiles(AzulGrid);
         CreateMahjongTiles(VermelhoGrid);
-
-       
+        jogadorAtual = new Random().Next(2);
+        pecaSorteada = new Peca();
+        pecaSorteada.Type = new Random().Next(0,3);
+        
 
         ExitButton.Clicked += OnExitButtonClicked;
     }
 
-        
+    private void Rodada()
+    {
+       
+    }    
+
+
+    private void SelecionarColuna()
+    {
+        if (jogadorAtual == 0)
+        {
+            //Jogador Azul
+            //Desabilitar o clique da coluna vermelha
+
+            coluna1Azul.Tema == null 
+            
+        }
+        else
+        {
+            //Jogador Vermelho
+        }
+    }
 
     private void CreateMahjongTiles(Grid PlayerGrid)
     {
